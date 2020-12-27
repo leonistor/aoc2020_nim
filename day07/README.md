@@ -6,6 +6,7 @@ Due to recent aviation regulations, many rules (your puzzle input) are being enf
 
 For example, consider the following rules:
 
+```
     light red bags contain 1 bright white bag, 2 muted yellow bags.
     dark orange bags contain 3 bright white bags, 4 muted yellow bags.
     bright white bags contain 1 shiny gold bag.
@@ -15,6 +16,7 @@ For example, consider the following rules:
     vibrant plum bags contain 5 faded blue bags, 6 dotted black bags.
     faded blue bags contain no other bags.
     dotted black bags contain no other bags.
+```
 
 These rules specify the required contents for 9 bag types. In this example, every `faded blue` bag is empty, every `vibrant plum` bag contains 11 bags (5 `faded blue` and 6 `dotted black`), and so on.
 
@@ -31,6 +33,7 @@ So, in this example, the number of bag colors that can eventually contain at lea
 
 _How many bag colors can eventually contain at least one `shiny gold` bag?_ (The list of rules is quite long; make sure you get all of it.)
 
+Your puzzle answer was `213`.
 
 ## --- Part Two ---
 
@@ -49,6 +52,7 @@ Of course, the actual rules have a <span title="100%">small</span> chance of goi
 
 Here's another example:
 
+```
     shiny gold bags contain 2 dark red bags.
     dark red bags contain 2 dark orange bags.
     dark orange bags contain 2 dark yellow bags.
@@ -56,7 +60,10 @@ Here's another example:
     dark green bags contain 2 dark blue bags.
     dark blue bags contain 2 dark violet bags.
     dark violet bags contain no other bags.
+```
 
 In this example, a single `shiny gold` bag must contain `_126_` other bags.
 
 _How many individual bags are required inside your single `shiny gold` bag?_
+
+Your puzzle answer was `38426`.

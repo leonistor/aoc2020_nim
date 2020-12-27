@@ -23,6 +23,7 @@ Suppose the 26th number is `45`, and the first number (no longer an option, as i
 
 Here is a larger example which only considers the previous _5_ numbers (and has a preamble of length 5):
 
+```
     35
     20
     15
@@ -43,10 +44,13 @@ Here is a larger example which only considers the previous _5_ numbers (and has 
     277
     309
     576
+```
 
 In this example, after the 5-number preamble, almost every number is the sum of two of the previous 5 numbers; the only number that does not follow this rule is _`127`_.
 
 The first step of attacking the weakness in the XMAS data is to find the first number in the list (after the preamble) which is _not_ the sum of two of the 25 numbers before it. _What is the first number that does not have this property?_
+
+Your puzzle answer was `1309761972`.
 
 ## --- Part Two ---
 
@@ -54,6 +58,7 @@ The final step in breaking the XMAS encryption relies on the invalid number you 
 
 Again consider the above example:
 
+```
     35
     20
     15
@@ -74,9 +79,12 @@ Again consider the above example:
     277
     309
     576
+```
 
 In this list, adding up all of the numbers from `15` through `40` produces the invalid number from step 1, `127`. (Of course, the contiguous set of numbers in your actual list might be much longer.)
 
 To find the _encryption weakness_, add together the _smallest_ and _largest_ number in this contiguous range; in this example, these are `15` and `47`, producing _`62`_.
 
 _What is the encryption weakness in your XMAS-encrypted list of numbers?_
+
+Your puzzle answer was `177989832`.

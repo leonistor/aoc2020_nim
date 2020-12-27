@@ -14,6 +14,7 @@ The boot code is represented as a text file with one _instruction_ per line of t
 
 For example, consider the following program:
 
+```
     nop +0
     acc +1
     jmp +4
@@ -23,9 +24,11 @@ For example, consider the following program:
     acc +1
     jmp -4
     acc +6
+```
 
 These instructions are visited in this order:
 
+```
     nop +0  | 1
     acc +1  | 2, 8(!)
     jmp +4  | 3
@@ -35,6 +38,7 @@ These instructions are visited in this order:
     acc +1  | 4
     jmp -4  | 5
     acc +6  |
+```
 
 First, the `nop +0` does nothing. Then, the accumulator is increased from 0 to 1 (`acc +1`) and `jmp +4` sets the next instruction to the other `acc +1` near the bottom. After it increases the accumulator from 1 to 2, `jmp -4` executes, setting the next instruction to the only `acc +3`. It sets the accumulator to 5, and `jmp -3` causes the program to continue back at the first `acc +1`.
 
@@ -43,6 +47,8 @@ This is an _infinite loop_: with this sequence of jumps, the program will run fo
 Immediately _before_ the program would run an instruction a second time, the value in the accumulator is _`5`_.
 
 Run your copy of the boot code. Immediately before any instruction is executed a second time, _what value is in the accumulator?_
+
+Your puzzle answer was `1487`.
 
 ## --- Part Two ---
 
@@ -54,6 +60,7 @@ The program is supposed to terminate by _attempting to execute an instruction im
 
 For example, consider the same program from above:
 
+```
     nop +0
     acc +1
     jmp +4
@@ -63,11 +70,13 @@ For example, consider the same program from above:
     acc +1
     jmp -4
     acc +6
+```
 
 If you change the first instruction from `nop +0` to `jmp +0`, it would create a single-instruction infinite loop, never leaving that instruction. If you change almost any of the `jmp` instructions, the program will still eventually find another `jmp` instruction and loop forever.
 
 However, if you change the second-to-last instruction (from `jmp -4` to `nop -4`), the program terminates! The instructions are visited in this order:
 
+```
     nop +0  | 1
     acc +1  | 2
     jmp +4  | 3
@@ -77,7 +86,10 @@ However, if you change the second-to-last instruction (from `jmp -4` to `nop -4`
     acc +1  | 4
     nop -4  | 5
     acc +6  | 6
+```
 
 After the last instruction (`acc +6`), the program terminates by attempting to run the instruction below the last instruction in the file. With this change, after the program terminates, the accumulator contains the value _`8`_ (`acc +1`, `acc +1`, `acc +6`).
 
 Fix the program so that it terminates normally by changing exactly one `jmp` (to `nop`) or `nop` (to `jmp`). _What is the value of the accumulator after the program terminates?_
+
+Your puzzle answer was `1607`.

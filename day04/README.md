@@ -45,6 +45,8 @@ According to the above rules, your improved system would report **2** valid pass
 
 Count the number of _valid_ passports - those that have all required fields. Treat `cid` as optional. _In your batch file, how many passports are valid?_
 
+Your puzzle answer was `210`.
+
 ## --- Part Two ---
 
 The line is moving more quickly now, but you overhear airport security talking about how passports with invalid data are getting through. Better add some data validation, quick!
@@ -64,6 +66,7 @@ You can continue to ignore the `cid` field, but each other field has <span title
 
 Your job is to count the passports where all required fields are both _present_ and _valid_ according to the above rules. Here are some example values:
 
+```
     byr valid:   2002
     byr invalid: 2003
 
@@ -81,9 +84,11 @@ Your job is to count the passports where all required fields are both _present_ 
 
     pid valid:   000000001
     pid invalid: 0123456789
+```
 
 Here are some invalid passports:
 
+```
     eyr:1972 cid:100
     hcl:#18171d ecl:amb hgt:170 pid:186cm iyr:2018 byr:1926
 
@@ -97,9 +102,11 @@ Here are some invalid passports:
     hgt:59cm ecl:zzz
     eyr:2038 hcl:74454a iyr:2023
     pid:3556412378 byr:2007
+```
 
 Here are some valid passports:
 
+```
     pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:1980
     hcl:#623a2f
 
@@ -112,5 +119,8 @@ Here are some valid passports:
     eyr:2022
 
     iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719
+```
 
 Count the number of _valid_ passports - those that have all required fields _and valid values_. Continue to treat `cid` as optional. _In your batch file, how many passports are valid?_
+
+Your puzzle answer was `131`.
